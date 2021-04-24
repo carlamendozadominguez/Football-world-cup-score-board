@@ -1,14 +1,11 @@
-﻿using FootballWordCuScoreBoard.Domain;
-using FootballWordCupScoreBoard.Domain;
-using FootballWordCuScoreBoard.Intrastructure;
-using FootballWordCuScoreBoard.Presentation;
+﻿using FootballWordCupScoreBoard.Intrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using GameRepository = FootballWordCuScoreBoard.Intrastructure.GameRepository;
-using FootballWordCuScoreBoard.Domain.Service;
-using ScoreBoardService = FootballWordCuScoreBoard.Domain.Service.ScoreBoard;
-using ScoreBoard = FootballWordCuScoreBoard.Presentation.ScoreBoard;
+using GameRepository = FootballWordCupScoreBoard.Intrastructure.GameRepository;
+using FootballWordCupScoreBoard.Domain.Service;
+using ScoreBoardService = FootballWordCupScoreBoard.Domain.Service.ScoreBoard;
+using ScoreBoard = FootballWordCupScoreBoard.Presentation.ScoreBoard;
 
 namespace Presentation.FootballWordCupScoreBoard
 {

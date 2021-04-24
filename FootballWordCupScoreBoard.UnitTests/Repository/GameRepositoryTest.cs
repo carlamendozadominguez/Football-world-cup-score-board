@@ -1,8 +1,5 @@
-using FootballWordCupScoreBoard.Domain;
 using FootballWordCupScoreBoard.Domain.Models;
-using FootballWordCuScoreBoard.Intrastructure;
-using Moq;
-using System;
+using FootballWordCupScoreBoard.Intrastructure;
 using Xunit;
 
 namespace FootballWordCupScoreBoard.UnitTests.Repository

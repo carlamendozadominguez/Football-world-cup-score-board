@@ -1,8 +1,8 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
-using FootballWordCuScoreBoard.Intrastructure;
+using FootballWordCupScoreBoard.Intrastructure;
 using System;
 
-namespace FootballWordCuScoreBoard.Domain.Service
+namespace FootballWordCupScoreBoard.Domain.Service
 {
     public class ScoreBoard : IScoreBoard
     {

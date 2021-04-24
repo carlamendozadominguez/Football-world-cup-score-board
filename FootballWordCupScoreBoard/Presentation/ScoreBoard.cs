@@ -1,7 +1,7 @@
-﻿using FootballWordCuScoreBoard.Domain.Service;
+﻿using FootballWordCupScoreBoard.Domain.Service;
 using System;
 
-namespace FootballWordCuScoreBoard.Presentation
+namespace FootballWordCupScoreBoard.Presentation
 {
     public class ScoreBoard
     {

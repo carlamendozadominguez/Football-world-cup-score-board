@@ -1,5 +1,4 @@
-﻿using FootballWordCupScoreBoard.Domain;
-using System;
+﻿using System;
 
 namespace FootballWordCupScoreBoard.Domain.Models
 {

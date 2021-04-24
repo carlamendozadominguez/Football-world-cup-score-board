@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FootballWordCupScoreBoard.Domain.Models
+﻿namespace FootballWordCupScoreBoard.Domain.Models
 {
     public class Score
     {

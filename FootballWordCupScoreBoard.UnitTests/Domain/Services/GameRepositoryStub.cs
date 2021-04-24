@@ -1,5 +1,5 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
-using FootballWordCuScoreBoard.Intrastructure;
+using FootballWordCupScoreBoard.Intrastructure;
 using System.Collections.Generic;
 using System.Linq;
 

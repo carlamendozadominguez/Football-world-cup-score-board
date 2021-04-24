@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FootballWordCuScoreBoard.Domain.Service
+namespace FootballWordCupScoreBoard.Domain.Service
 {
     public interface IScoreBoard
     {

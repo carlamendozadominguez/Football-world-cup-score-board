@@ -1,5 +1,5 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
-using FootballWordCuScoreBoard.Domain.Service;
+using FootballWordCupScoreBoard.Domain.Service;
 using System;
 using Xunit;
 
