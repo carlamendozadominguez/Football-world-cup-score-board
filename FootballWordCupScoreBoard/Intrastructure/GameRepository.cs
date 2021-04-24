@@ -31,7 +31,7 @@ namespace FootballWordCuScoreBoard.Intrastructure
             return board
                 .FirstOrDefault(boardGame => 
                    boardGame.HomeTeam.Name == homeTeamName 
-                   && boardGame.AwayTeam.Name == awayTeamName);
+                   && boardGame.AwayTeam.Name == awayTeamName && boardGame.FinishAt == null);
         }
 
     }

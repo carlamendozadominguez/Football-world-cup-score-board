@@ -38,11 +38,6 @@ namespace FootballWordCuScoreBoard.Domain.Service
                 throw new Exception("Game not found");
             }
 
-            if (game.FinishAt != null)
-            {
-                throw new Exception("Game is already finished");
-            }
-
             game.Finish();
 
             Game updatedGame = this.gameRepository.Update(game);

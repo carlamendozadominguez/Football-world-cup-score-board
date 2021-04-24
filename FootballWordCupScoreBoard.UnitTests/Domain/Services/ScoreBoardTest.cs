@@ -75,19 +75,5 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Service
             var exception = Assert.Throws<Exception>(() => this.scoreBoard.FinishGame(homeTeamName, awayTeamName));
             Assert.Equal("Game not found", exception.Message);
         }
-
-        [Fact]
-        public void FinishGame_FinishedGame_ShouldThrowException()
-        {
-            string homeTeamName = "homeTeamName";
-            string awayTeamName = "awayTeamName";
-            Game game = new Game(new Team(homeTeamName), new Team(awayTeamName));
-
-            game.Finish();
-
-            var addedGame = this.gameRepositoryStub.Add(game);
-            var exception = Assert.Throws<Exception>(() => this.scoreBoard.FinishGame(homeTeamName, awayTeamName));
-            Assert.Equal("Game is already finished", exception.Message);
-        }
     }
 }

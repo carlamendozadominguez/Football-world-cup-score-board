@@ -21,7 +21,7 @@ namespace Presentation.FootballWordCupScoreBoard
             int option = 0;
             while (option != 5)
             {
-                Console.WriteLine("----- FOOTBALL WORD CUP SCORE BOARD");
+                Console.WriteLine("\n----- FOOTBALL WORD CUP SCORE BOARD -----");
                 Console.WriteLine("1. Start Game");
                 Console.WriteLine("2. Upload Game");
                 Console.WriteLine("3. Finish Game");
@@ -32,34 +32,34 @@ namespace Presentation.FootballWordCupScoreBoard
                 try
                 {
                     option = int.Parse(Console.ReadLine());
+
+                    string homeTeamName;
+                    string awayTeamName;
+
+                    switch (option)
+                    {
+                        case 1:
+                            Console.Write("Home team name:");
+                            homeTeamName = Console.ReadLine();
+                            Console.Write("Away team name:");
+                            awayTeamName = Console.ReadLine();
+                            scoreBoard.StartGame(homeTeamName, awayTeamName);
+                            break;
+                        case 3:
+                            Console.Write("Home team name:");
+                            homeTeamName = Console.ReadLine();
+                            Console.Write("Away team name:");
+                            awayTeamName = Console.ReadLine();
+                            scoreBoard.FinishGame(homeTeamName, awayTeamName);
+                            break;
+                        default:
+                            Console.WriteLine("Please choose an option between 1 and 5");
+                            break;
+                    }
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Option must be a number");
-                }
-
-                string homeTeamName;
-                string awayTeamName;
-
-                switch (option)
-                {
-                    case 1:
-                        Console.Write("Home team name:");
-                        homeTeamName = Console.ReadLine();
-                        Console.Write("Away team name:");
-                        awayTeamName = Console.ReadLine();
-                        scoreBoard.StartGame(homeTeamName, awayTeamName);
-                        break;
-                    case 3:
-                        Console.Write("Home team name:");
-                        homeTeamName = Console.ReadLine();
-                        Console.Write("Away team name:");
-                        awayTeamName = Console.ReadLine();
-                        scoreBoard.FinishGame(homeTeamName, awayTeamName);
-                        break;
-                    default:
-                        Console.WriteLine("Please choose an option between 1 and 5");
-                        break;
                 }
             }
         }
