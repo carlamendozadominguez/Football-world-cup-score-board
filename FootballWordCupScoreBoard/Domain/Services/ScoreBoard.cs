@@ -15,6 +15,13 @@ namespace FootballWordCuScoreBoard.Domain.Service
 
         public Game StartGame(string homeTeamName, string awayTeamName)
         {
+            Game findGame = this.gameRepository.FindByTeamNames(homeTeamName, awayTeamName);
+
+            if (findGame != null)
+            {
+                throw new Exception("Game is already started");
+            }
+
             var homeTeam = new Team(homeTeamName);
             var awayTeam = new Team(awayTeamName);
 

@@ -44,6 +44,18 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Service
         }
 
         [Fact]
+        public void StartGame_StartedGameAlreadyExists_ShouldThrowException()
+        {
+            string homeTeamName = "homeTeamName";
+            string awayTeamName = "awayTeamName";
+
+            this.gameRepositoryStub.Add(new Game(new Team(homeTeamName), new Team(awayTeamName)));
+
+            var exception = Assert.Throws<Exception>(() => this.scoreBoard.StartGame(homeTeamName, awayTeamName));
+            Assert.Equal("Game is already started", exception.Message);
+        }
+
+        [Fact]
         public void FinishGame_ShouldFinishAGame()
         {
             string homeTeamName = "homeTeamName";
