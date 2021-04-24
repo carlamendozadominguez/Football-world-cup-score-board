@@ -27,5 +27,11 @@ namespace FootballWordCupScoreBoard.Domain.Models
             HomeTeam = homeTeam;
             AwayTeam = awayTeam;
         }
+
+        public void Finish()
+        {
+            this.FinishAt = DateTime.UtcNow;
+        }
+
     }
 }

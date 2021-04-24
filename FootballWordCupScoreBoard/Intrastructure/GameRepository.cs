@@ -1,5 +1,6 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FootballWordCuScoreBoard.Intrastructure
 {
@@ -13,5 +14,25 @@ namespace FootballWordCuScoreBoard.Intrastructure
 
             return game;
         }
+
+        public Game Update(Game game)
+        {
+            Game gameToUpdate = this.board.FirstOrDefault(boardGame => boardGame == game);
+            if (gameToUpdate != null)
+            {
+                gameToUpdate = game;
+            }
+
+            return gameToUpdate;
+        }
+
+        public Game FindByTeamNames(string homeTeamName, string awayTeamName)
+        {
+            return board
+                .FirstOrDefault(boardGame => 
+                   boardGame.HomeTeam.Name == homeTeamName 
+                   && boardGame.AwayTeam.Name == awayTeamName);
+        }
+
     }
 }

@@ -27,7 +27,7 @@ namespace Presentation.FootballWordCupScoreBoard
                 Console.WriteLine("3. Finish Game");
                 Console.WriteLine("4. Get Board");
                 Console.WriteLine("5. Exit");
-                Console.WriteLine("Choose an option: ");
+                Console.Write("Choose an option: ");
 
                 try
                 {
@@ -38,14 +38,24 @@ namespace Presentation.FootballWordCupScoreBoard
                     Console.WriteLine("Option must be a number");
                 }
 
+                string homeTeamName;
+                string awayTeamName;
+
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("Home team name:");
-                        string homeTeamName = Console.ReadLine();
-                        Console.WriteLine("Away team name:");
-                        string awayTeamName = Console.ReadLine();
+                        Console.Write("Home team name:");
+                        homeTeamName = Console.ReadLine();
+                        Console.Write("Away team name:");
+                        awayTeamName = Console.ReadLine();
                         scoreBoard.StartGame(homeTeamName, awayTeamName);
+                        break;
+                    case 3:
+                        Console.Write("Home team name:");
+                        homeTeamName = Console.ReadLine();
+                        Console.Write("Away team name:");
+                        awayTeamName = Console.ReadLine();
+                        scoreBoard.FinishGame(homeTeamName, awayTeamName);
                         break;
                     default:
                         Console.WriteLine("Please choose an option between 1 and 5");
@@ -58,8 +68,8 @@ namespace Presentation.FootballWordCupScoreBoard
         {
             var host = Host.CreateDefaultBuilder(args)
                                         .ConfigureServices((_, services) =>
-                                        services.AddScoped<IGameRepository, GameRepository>()
-
+                                        services
+                                            .AddScoped<IGameRepository, GameRepository>()
                                             .AddScoped<IScoreBoard, ScoreBoardService>()
                                         ).Build();
 

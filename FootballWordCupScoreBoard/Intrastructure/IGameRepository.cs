@@ -6,5 +6,8 @@ namespace FootballWordCuScoreBoard.Intrastructure
     {
         Game Add(Game game);
 
+        Game Update(Game game);
+
+        Game FindByTeamNames(string homeTeamName, string awayTeamName);
     }
 }

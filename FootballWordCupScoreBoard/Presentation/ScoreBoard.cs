@@ -23,5 +23,17 @@ namespace FootballWordCuScoreBoard.Presentation
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void FinishGame(string homeTeamName, string awayTeamName)
+        {
+            try
+            {
+                this.scoreBoard.FinishGame(homeTeamName, awayTeamName);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

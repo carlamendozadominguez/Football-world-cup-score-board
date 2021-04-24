@@ -26,5 +26,14 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Models
             var exception = Assert.Throws<Exception>(() => new Game(null, new Team("away")));
             Assert.Equal("A game must have two teams to start", exception.Message);
         }
+
+        [Fact]
+        public void Finish_ShouldSetGameFinishDate()
+        {
+            Game game = new Game(new Team("home"), new Team("away"));
+            game.Finish();
+
+            Assert.NotNull(game.FinishAt);
+        }
     }
 }

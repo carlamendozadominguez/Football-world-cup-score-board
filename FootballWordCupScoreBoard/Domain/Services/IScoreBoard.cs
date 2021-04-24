@@ -8,5 +8,7 @@ namespace FootballWordCuScoreBoard.Domain.Service
     public interface IScoreBoard
     {
         Game StartGame(string homeTeamName, string awayTeamName);
+
+        void FinishGame(string homeTeamName, string awayTeamName);
     }
 }
