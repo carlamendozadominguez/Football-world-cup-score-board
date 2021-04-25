@@ -10,7 +10,7 @@ namespace FootballWordCupScoreBoard.Domain.Models
 
         public DateTime StartAt { get; }
 
-        public DateTime? FinishAt { get; set; }
+        public DateTime? FinishAt { get; private set; }
 
         public Score Score { get; set; }
 

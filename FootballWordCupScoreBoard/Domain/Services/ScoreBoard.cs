@@ -33,11 +33,7 @@ namespace FootballWordCupScoreBoard.Domain.Service
 
         public void FinishGame(string homeTeamName, string awayTeamName)
         {
-            Game game = this.gameRepository.FindByTeamNames(homeTeamName, awayTeamName);
-            if(game == null)
-            {
-                throw new Exception("Game not found");
-            }
+            Game game = this.GetGameByTeamNamesOrFail(homeTeamName, awayTeamName);
 
             game.Finish();
 
@@ -46,11 +42,7 @@ namespace FootballWordCupScoreBoard.Domain.Service
 
         public Game UpdateScoreGame(string homeTeamName, string awayTeamName, int homeScore, int awayScore)
         {
-            Game game = this.gameRepository.FindByTeamNames(homeTeamName, awayTeamName);
-            if (game == null)
-            {
-                throw new Exception("Game not found");
-            }
+            Game game = this.GetGameByTeamNamesOrFail(homeTeamName, awayTeamName);
 
             game.Score = new Score(homeScore, awayScore);
 
@@ -60,6 +52,17 @@ namespace FootballWordCupScoreBoard.Domain.Service
         public List<Game> GetBoard()
         {
             return this.gameRepository.GetBoard();
+        }
+
+        private Game GetGameByTeamNamesOrFail(string homeTeamName, string awayTeamName)
+        {
+            Game game = this.gameRepository.FindByTeamNames(homeTeamName, awayTeamName);
+            if (game == null)
+            {
+                throw new Exception("Game not found");
+            }
+
+            return game;
         }
     }
 }

@@ -18,10 +18,12 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Models
             Assert.Equal(home + away, score.Total);
         }
 
-        [Fact]
-        public void Score_LessThanZeroScore_ShouldThrowException()
+        [Theory]
+        [InlineData(0, -1)]
+        [InlineData(-1, 0)]
+        public void Score_LessThanZeroScore_ShouldThrowException(int home, int away)
         {
-            var exception = Assert.Throws<Exception>(() => new Score(-1, -1));
+            var exception = Assert.Throws<Exception>(() => new Score(home, away));
             Assert.Equal("Score can not be less than 0", exception.Message);
         }
     }

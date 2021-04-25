@@ -104,7 +104,7 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Service
         }
 
         [Fact]
-        public void GetBoard_ShouldReturnsGamesInProperlyOrder()
+        public void GetBoard_ShouldReturnGamesSortedByTotalGoalsAndDate()
         {
             List<Game> games = new List<Game>()
             {
