@@ -34,5 +34,13 @@ namespace FootballWordCupScoreBoard.Intrastructure
                    && boardGame.AwayTeam.Name == awayTeamName && boardGame.FinishAt == null);
         }
 
+        public List<Game> GetBoard()
+        {
+            return board
+                .Where(boardGame => boardGame.FinishAt == null)
+                .OrderByDescending(boardGame => boardGame.Score.Total)
+                .ThenByDescending(boardGame => boardGame.StartAt)
+                .ToList();
+        }
     }
 }

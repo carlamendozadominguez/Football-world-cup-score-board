@@ -16,6 +16,13 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Service
             return game;
         }
 
+        public List<Game> Add(List<Game> games)
+        {
+            board.AddRange(games);
+
+            return games;
+        }
+
         public Game Update(Game game)
         {
             Game gameToUpdate = this.board.FirstOrDefault(boardGame => boardGame == game && boardGame.FinishAt != null);
@@ -35,7 +42,13 @@ namespace FootballWordCupScoreBoard.UnitTests.Domain.Service
                    && boardGame.AwayTeam.Name == awayTeamName);
         }
 
-
-
+        public List<Game> GetBoard()
+        {
+            return board
+                .Where(boardGame => boardGame.FinishAt == null)
+                .OrderByDescending(boardGame => boardGame.Score.Total)
+                .ThenByDescending(boardGame => boardGame.StartAt)
+                .ToList();
+        }
     }
 }

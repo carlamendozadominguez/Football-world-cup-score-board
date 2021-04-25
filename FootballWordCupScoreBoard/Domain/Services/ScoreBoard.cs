@@ -1,6 +1,7 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
 using FootballWordCupScoreBoard.Intrastructure;
 using System;
+using System.Collections.Generic;
 
 namespace FootballWordCupScoreBoard.Domain.Service
 {
@@ -54,6 +55,11 @@ namespace FootballWordCupScoreBoard.Domain.Service
             game.Score = new Score(homeScore, awayScore);
 
             return this.gameRepository.Update(game);
+        }
+
+        public List<Game> GetBoard()
+        {
+            return this.gameRepository.GetBoard();
         }
     }
 }

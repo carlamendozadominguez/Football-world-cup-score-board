@@ -6,6 +6,8 @@ using GameRepository = FootballWordCupScoreBoard.Intrastructure.GameRepository;
 using FootballWordCupScoreBoard.Domain.Service;
 using ScoreBoardService = FootballWordCupScoreBoard.Domain.Service.ScoreBoard;
 using ScoreBoard = FootballWordCupScoreBoard.Presentation.ScoreBoard;
+using FootballWordCupScoreBoard.Domain.Models;
+using System.Collections.Generic;
 
 namespace Presentation.FootballWordCupScoreBoard
 {
@@ -62,6 +64,13 @@ namespace Presentation.FootballWordCupScoreBoard
                             Console.Write("Away team name:");
                             awayTeamName = Console.ReadLine();
                             scoreBoard.FinishGame(homeTeamName, awayTeamName);
+                            break;
+                        case 4:
+                            List<Game> board = scoreBoard.GetBoard();
+                            board.ForEach(game =>
+                            {
+                                Console.WriteLine($"\n {game.HomeTeam.Name} - {game.AwayTeam.Name}: {game.Score.Home} - {game.Score.Away}");
+                            });
                             break;
                         default:
                             Console.WriteLine("Please choose an option between 1 and 5");

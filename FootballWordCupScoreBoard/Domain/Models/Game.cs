@@ -4,11 +4,11 @@ namespace FootballWordCupScoreBoard.Domain.Models
 {
     public class Game
     {
-        public Team HomeTeam { get; set; }
+        public Team HomeTeam { get; }
 
-        public Team AwayTeam { get; set; }
+        public Team AwayTeam { get; }
 
-        public DateTime StartAt { get; set; }
+        public DateTime StartAt { get; }
 
         public DateTime? FinishAt { get; set; }
 

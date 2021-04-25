@@ -1,5 +1,7 @@
-﻿using FootballWordCupScoreBoard.Domain.Service;
+﻿using FootballWordCupScoreBoard.Domain.Models;
+using FootballWordCupScoreBoard.Domain.Service;
 using System;
+using System.Collections.Generic;
 
 namespace FootballWordCupScoreBoard.Presentation
 {
@@ -46,6 +48,22 @@ namespace FootballWordCupScoreBoard.Presentation
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public List<Game> GetBoard()
+        {
+            var board = new List<Game>();
+
+            try
+            {
+                board = this.scoreBoard.GetBoard();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return board;
         }
     }
 }
