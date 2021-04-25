@@ -41,7 +41,19 @@ namespace FootballWordCupScoreBoard.Domain.Service
             game.Finish();
 
             Game updatedGame = this.gameRepository.Update(game);
+        }
 
+        public Game UpdateScoreGame(string homeTeamName, string awayTeamName, int homeScore, int awayScore)
+        {
+            Game game = this.gameRepository.FindByTeamNames(homeTeamName, awayTeamName);
+            if (game == null)
+            {
+                throw new Exception("Game not found");
+            }
+
+            game.Score = new Score(homeScore, awayScore);
+
+            return this.gameRepository.Update(game);
         }
     }
 }

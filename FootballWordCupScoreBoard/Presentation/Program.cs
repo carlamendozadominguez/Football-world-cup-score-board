@@ -33,6 +33,9 @@ namespace Presentation.FootballWordCupScoreBoard
                     string homeTeamName;
                     string awayTeamName;
 
+                    string homeScore;
+                    string awayScore;
+
                     switch (option)
                     {
                         case 1:
@@ -41,6 +44,17 @@ namespace Presentation.FootballWordCupScoreBoard
                             Console.Write("Away team name:");
                             awayTeamName = Console.ReadLine();
                             scoreBoard.StartGame(homeTeamName, awayTeamName);
+                            break;
+                        case 2:
+                            Console.Write("Home team name:");
+                            homeTeamName = Console.ReadLine();
+                            Console.Write("Away team name:");
+                            awayTeamName = Console.ReadLine();
+                            Console.Write("Home score:");
+                            homeScore = Console.ReadLine();
+                            Console.Write("Away score:");
+                            awayScore = Console.ReadLine();
+                            scoreBoard.UpdateScoreGame(homeTeamName, awayTeamName, int.Parse(homeScore), int.Parse(awayScore));
                             break;
                         case 3:
                             Console.Write("Home team name:");

@@ -35,5 +35,17 @@ namespace FootballWordCupScoreBoard.Presentation
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void UpdateScoreGame(string homeTeamName, string awayTeamName, int homeScore, int awayScore)
+        {
+            try
+            {
+                this.scoreBoard.UpdateScoreGame(homeTeamName, awayTeamName, homeScore, awayScore);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

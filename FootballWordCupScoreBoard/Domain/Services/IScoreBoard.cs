@@ -1,7 +1,4 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FootballWordCupScoreBoard.Domain.Service
 {
@@ -10,5 +7,8 @@ namespace FootballWordCupScoreBoard.Domain.Service
         Game StartGame(string homeTeamName, string awayTeamName);
 
         void FinishGame(string homeTeamName, string awayTeamName);
+
+        Game UpdateScoreGame(string homeTeamName, string awayTeamName, int homeScore, int awayScore);
+
     }
 }
