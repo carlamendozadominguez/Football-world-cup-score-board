@@ -1,7 +1,7 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
 using System.Collections.Generic;
 
-namespace FootballWordCupScoreBoard.Intrastructure
+namespace FootballWordCupScoreBoard.Infrastructure
 {
     public interface IGameRepository
     {

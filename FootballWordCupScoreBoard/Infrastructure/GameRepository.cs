@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FootballWordCupScoreBoard.Intrastructure
+namespace FootballWordCupScoreBoard.Infrastructure
 {
     public class GameRepository : IGameRepository
     {

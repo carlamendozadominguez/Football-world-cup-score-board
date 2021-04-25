@@ -1,11 +1,11 @@
 ﻿using FootballWordCupScoreBoard.Domain.Models;
 using FootballWordCupScoreBoard.Domain.Service;
-using FootballWordCupScoreBoard.Intrastructure;
+using FootballWordCupScoreBoard.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
-using GameRepository = FootballWordCupScoreBoard.Intrastructure.GameRepository;
+using GameRepository = FootballWordCupScoreBoard.Infrastructure.GameRepository;
 using ScoreBoard = FootballWordCupScoreBoard.Presentation.ScoreBoard;
 using ScoreBoardService = FootballWordCupScoreBoard.Domain.Service.ScoreBoard;
 
